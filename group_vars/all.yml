@@ -1,0 +1,5 @@
+---
+# These variables are defined to all groups in the inventory file.
+
+# Default SSH username & password
+ansible_ssh_user: administrator

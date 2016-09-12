@@ -1,0 +1,8 @@
+- name: MongoDB w/ clustering!
+  become: sudo
+  hosts: all
+  roles:
+    - sys-config 
+    - dependencies
+    - mongodb
+    - mongodb-config

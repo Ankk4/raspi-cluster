@@ -1,0 +1,8 @@
+---
+# vars file for sys-config
+users:
+  administrator:
+    name: administrator
+    group: administrator
+#   password: ehDCm0dR9rqgE
+

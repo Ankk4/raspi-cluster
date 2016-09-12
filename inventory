@@ -1,0 +1,29 @@
+# Ansible control machine
+acs ansible_connection=local
+
+# Servers that default to Python3
+[python3]
+
+# Test servers
+[devservers]
+acs
+
+[picluster]
+nodepi01.dc.lab ansible_connection=ssh
+nodepi02.dc.lab ansible_connection=ssh
+nodepi03.dc.lab ansible_connection=ssh
+nodepi04.dc.lab ansible_connection=ssh
+nodepi05.dc.lab ansible_connection=ssh
+
+[dbservers]
+nodepi01.dc.lab
+nodepi02.dc.lab
+nodepi03.dc.lab
+nodepi04.dc.lab
+
+[artibator]
+nodepi05.dc.lab
+
+[datacenter:children]
+dbservers
+python3

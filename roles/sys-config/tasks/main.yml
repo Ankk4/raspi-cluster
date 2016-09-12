@@ -1,0 +1,24 @@
+---
+# tasks file for sys-config
+
+# Add same user information to all hosts
+- name: Make sure user groups are present
+  group: name={{ item.value.group }} state=present
+  with_dict: "{{ users }}"
+
+- name: Allow 'administrator' group to have passwordless sudo
+  lineinfile:
+    dest: /etc/sudoers
+    state: present
+    regexp: '^%administrator'
+    line: '%administrator ALL=(ALL) NOPASSWD: ALL'
+
+- name: Make new users if not already present
+  user: name={{ item.value.name }} state=present groups={{ item.value.group }} createhome=yes
+  with_dict: "{{ users }}"
+
+# Add authorized keys with user dict
+- name: Set up authorized keys for the "ansible_ssh_user" user
+  authorized_key: user={{ item.value.name }} key="/home/{{ansible_ssh_user}}/.ssh/id_rsa.pub"
+  with_dict: "{{ users }}"
+

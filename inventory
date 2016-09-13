@@ -9,20 +9,21 @@ acs ansible_connection=local
 acs
 
 [picluster]
-nodepi01.dc.lab ansible_connection=ssh
-nodepi02.dc.lab ansible_connection=ssh
-nodepi03.dc.lab ansible_connection=ssh
-nodepi04.dc.lab ansible_connection=ssh
-nodepi05.dc.lab ansible_connection=ssh
+172.31.14.220 ansible_user=pi
+172.31.14.187 ansible_user=pi
+172.31.14.222 ansible_user=administrator
+172.31.14.223 ansible_user=administrator
+172.31.14.224 ansible_user=administrator
 
 [dbservers]
-nodepi01.dc.lab
-nodepi02.dc.lab
-nodepi03.dc.lab
-nodepi04.dc.lab
+172.31.14.220 ansible_user=pi
+172.31.14.187 ansible_user=pi
+172.31.14.222 ansible_user=administrator
+172.31.14.223 ansible_user=administrator
+172.31.14.223
 
-[artibator]
-nodepi05.dc.lab
+[arbitrator]
+172.31.14.224
 
 [datacenter:children]
 dbservers

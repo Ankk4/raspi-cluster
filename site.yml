@@ -1,6 +1,6 @@
 - name: MongoDB w/ clustering!
-  become: sudo
-  hosts: all
+  become: true
+  hosts: picluster
   roles:
     - sys-config 
     - dependencies

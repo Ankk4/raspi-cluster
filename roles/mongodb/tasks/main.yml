@@ -1,10 +1,7 @@
 ---
 # tasks file for mongodb
 - name: Add mongodb repository
-  apt_repository: > 
-                  repo='deb http://repo.mongodb.org/apt/debian wheezy/mongodb-org/3.2 main'
-                  state=present
-                  filename='mongodb-org-3.2'
+  apt_repository: repo='deb http://repo.mongodb.org/apt/debian wheezy/mongodb-org/3.2 main' state=present
 
 - name: Add repository key
   apt_key: keyserver=hkp://keyserver.ubuntu.com:80 id=EA312927

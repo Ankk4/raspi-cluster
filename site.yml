@@ -2,7 +2,7 @@
   become: true
   hosts: picluster
   roles:
-    - sys-config 
-    - dependencies
+    #- sys-config 
+    #- dependencies
     - mongodb
     - mongodb-config

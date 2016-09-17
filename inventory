@@ -6,21 +6,21 @@ acs ansible_connection=local
 
 # Test servers
 [devservers]
-acs
+acs ansible_connection=local
 
 [picluster]
-172.31.14.220 ansible_user=pi
-172.31.14.187 ansible_user=pi
+172.31.14.220 ansible_user=administrator
+172.31.14.187 ansible_user=administrator
 172.31.14.222 ansible_user=administrator
 172.31.14.223 ansible_user=administrator
 172.31.14.224 ansible_user=administrator
 
 [dbservers]
-172.31.14.220 ansible_user=pi
-172.31.14.187 ansible_user=pi
+172.31.14.220 ansible_user=administrator
+172.31.14.187 ansible_user=administrator
 172.31.14.222 ansible_user=administrator
 172.31.14.223 ansible_user=administrator
-172.31.14.223
+172.31.14.223 ansible_user=administrator
 
 [arbitrator]
 172.31.14.224

@@ -15,16 +15,30 @@ acs ansible_connection=local
 172.31.14.223 ansible_user=administrator
 172.31.14.224 ansible_user=administrator
 
-[dbservers]
+[vmcluster]
+192.168.202.2 ansible_user=administrator
+192.168.202.3 ansible_user=administrator
+192.168.202.4 ansible_user=administrator
+192.168.202.5 ansible_user=administrator
+
+# Mongod
+[shards]
 172.31.14.220 ansible_user=administrator
 172.31.14.187 ansible_user=administrator
 172.31.14.222 ansible_user=administrator
 172.31.14.223 ansible_user=administrator
-172.31.14.223 ansible_user=administrator
+192.168.202.4 ansible_user=administrator
+192.168.202.5 ansible_user=administrator
 
-[arbitrator]
-172.31.14.224
+# Mongod - config + replica set
+[configs]
+172.31.14.223 ansible_user=administrator
+192.168.202.2 ansible_user=administrator
+
+# Mongos
+[routers]
+172.31.14.224 ansible_user=administrator
+192.168.202.3 ansible_user=administrator
 
 [datacenter:children]
-dbservers
 python3

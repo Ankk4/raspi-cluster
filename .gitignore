@@ -48,3 +48,4 @@ Temporary Items
 
 # custom
 ansible.log
+inventory.yml
